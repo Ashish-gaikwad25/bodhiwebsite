@@ -1,0 +1,143 @@
+{% extends 'layout/layout.html' %}
+{% load static %}
+
+{% block title %}{{sname}} | Contact-Us {% endblock %}
+
+
+{% block content %}
+
+
+
+  <!--Section: Contact v.1-->
+<section class="section pb-5">
+
+    <!--Section heading-->
+    <h4 class="section-heading h1 pt-4" style="color:#5fcf80"><strong>CONTACT US</strong></h4>
+    <!--Section description-->
+
+    <div class="row">
+  
+      <!--Grid column-->
+      <div class="col-lg-6 mb-4">
+  
+        <!--Form with header-->
+        <div class="card">
+  
+          <div class="card-body">
+            <!--Header-->
+            <div class="form-header blue accent-1">
+              <h3 class="fas fa-envelope" style="color:#5fcf80"> contact us:</h3 >
+
+                <div>
+                    {% if messages %}          
+                    {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      {{ message }}
+                    </div>
+                    {% endfor %}
+                    {% endif %} </div>
+
+            </div>
+
+            <!-- <p>We'll write rarely, but with only the best content.</p> -->
+            <br>
+  
+            <!--Body-->
+            
+            <form method="post">
+                {% csrf_token %}
+              
+               
+                <div class="row">
+                  <div class="col-6">
+                    {{ form.name }}
+                  </div>
+                  <div class="col-6">
+                    {{ form.email}}
+                  </div>
+                </div>
+                {{ form.subject }}
+                {{ form.message }}
+               
+                <div class="text-center"><button type="submit">Send Message</button></div>
+              </form>
+          </div>
+  
+        </div>
+        <!--Form with header-->
+  
+      </div>
+      <!--Grid column-->
+  
+      <!--Grid column-->
+      <div class="col-lg-6">
+  
+        <!--Google map-->
+        <div id="map-container-google-9" class="z-depth-1-half map-container-5" style="height: 200px*300px">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15207.788174852752!2d75.889643!3d17.652667!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa9f00451c79a5eb!2sBodhi%20Technology!5e0!3m2!1sen!2sin!4v1620310511238!5m2!1sen!2sin"
+             width="350" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        <br>
+        <!--Buttons-->
+        <div class="row text-center">
+          <div class="col-md-4">
+            <a class="btn-floating green accent-1"><i class="fas fa-map-marker-alt"></i></a>
+            <p><strong>Bodhi Technology<br></strong>Limayewadi,<br>
+               Solapur,<br>
+                Maharashtra 413004</p>
+            <p>
+          </div>
+  
+          <div class="col-md-4">
+            <a class="btn-floating blue accent-1"></a><i class="fas fa-phone-alt"></i></a>
+              <!-- <i class="fas fa-phone"></i>-->
+            <strong>Email:<br></strong> bodhi.technology<br>@outlook.com<br>
+            
+           </div>
+  
+          <div class="col-md-4">
+            <a class="btn-floating blue accent-1"><i class="fas fa-envelope"></i></a>
+            <strong>Phone:<br></strong> +91 8007915552
+          </div>
+        </div>
+  
+      </div>
+      <!--Grid column-->
+  
+    </div>
+  
+  </section>
+
+  {% endblock %}
+  <!--Section: Contact v.1-->
+
+
+  
+
+  
+
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
